@@ -12,6 +12,14 @@ class Game:
         while user_input != 'y' and user_input != 'n' and user_input != 'no' and user_input != 'yes':
             print("Please enter 'y' or 'n'.")
             user_input = input().lower()
+        
+        if user_input == 'y' or user_input == 'yes':
+            Game.game_go = True
+            print(Game.game_go)
+        else:
+            print("Okay, perhaps another time :)")
+            exit()
+        
 
 
 '''
