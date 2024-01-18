@@ -4,6 +4,8 @@ from os import system
 class Game:
     def __init__(self):
         self.game_go = False
+        self.player1_name = ''
+        self.player2_name = ''
 
     def prompt_game():
 
@@ -27,6 +29,11 @@ class Game:
         print("instructions: lorem ipsum")
         print("press any key to continue")
         input()
+
+    def register_players():
+        Game.player1_name = input("Player 1, please enter your name: ")
+        print(Game.player1_name)
+        Game.player2_name = input("Player 2, please enter your name:  ")
         
 
 
