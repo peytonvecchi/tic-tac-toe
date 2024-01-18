@@ -32,7 +32,6 @@ class Game:
 
     def register_players():
         Game.player1_name = input("Player 1, please enter your name: ")
-        print(Game.player1_name)
         Game.player2_name = input("Player 2, please enter your name:  ")
         
 
