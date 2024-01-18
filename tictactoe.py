@@ -2,7 +2,16 @@
 
 class Game:
     def __init__(self):
-        pass
+        self.game_go = False
+
+    def prompt_game():
+        
+        print("Would you like to play a game of tic-tac-toe? (y/n)")
+        user_input = input().lower()
+
+        while user_input != 'y' and user_input != 'n' and user_input != 'no' and user_input != 'yes':
+            print("Please enter 'y' or 'n'.")
+            user_input = input().lower()
 
 
 '''
