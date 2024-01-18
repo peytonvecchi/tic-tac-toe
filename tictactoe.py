@@ -1,10 +1,13 @@
 # Need two players
+from os import system
 
 class Game:
     def __init__(self):
         self.game_go = False
 
     def prompt_game():
+
+        system('clear')
         
         print("Would you like to play a game of tic-tac-toe? (y/n)")
         user_input = input().lower()
@@ -19,6 +22,11 @@ class Game:
         else:
             print("Okay, perhaps another time :)")
             exit()
+
+    def display_instructions():
+        print("instructions: lorem ipsum")
+        print("press any key to continue")
+        input()
         
 
 
