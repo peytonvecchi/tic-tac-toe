@@ -1,5 +1,4 @@
 from tictactoe import Game
-import os
 
 game = Game
 
