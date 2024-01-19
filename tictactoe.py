@@ -15,24 +15,24 @@ class Game:
         user_input = input().lower()
 
         while user_input != 'y' and user_input != 'n' and user_input != 'no' and user_input != 'yes':
-            print("Please enter 'y' or 'n'.")
+            system('clear')
+            print("Please enter 'y' or 'n'. Would you like to play a game of tic-tac-toe?")
             user_input = input().lower()
         
         if user_input == 'y' or user_input == 'yes':
             Game.game_go = True
-            print(Game.game_go)
         else:
             print("Okay, perhaps another time :)")
             exit()
 
     def display_instructions():
-        print("instructions: lorem ipsum")
-        print("press any key to continue")
+        print("\ninstructions: lorem ipsum\n")
+        print("press any key to continue...")
         input()
 
     def register_players():
         Game.player1_name = input("Player 1, please enter your name: ")
-        Game.player2_name = input("Player 2, please enter your name:  ")
+        Game.player2_name = input("Player 2, please enter your name: ")
         
 
 
