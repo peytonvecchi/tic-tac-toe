@@ -38,7 +38,7 @@ class Game:
         Game.player1_name = input("Player 1, please enter your name: ")
         Game.player2_name = input("Player 2, please enter your name: ")
 
-    def player_move():
+    def prompt_player_move():
 
         if Game.player1_turn == True:
             system('clear')
@@ -53,7 +53,7 @@ class Game:
             Game.print_game_board()
             Game.player2_move = int(input()) - 1
             Game.player_moves[Game.player2_move] = "O"
-            Game.player1_move = True
+            Game.player1_turn = True
             
         
 
