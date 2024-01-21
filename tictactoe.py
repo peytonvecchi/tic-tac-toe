@@ -10,13 +10,13 @@ class Game:
     player1_move = 0
     player2_move = 0
     player_moves = ['', '', '', '', '', '', '', '', '']
-    game_board = '''
+    game_board = f'''
         |    |        
-    ____|____|____
+    __{player_moves[0]}__|__{player_moves[1]}__|__{player_moves[2]}__
         |    | 
-    ____|____|____
+    __{player_moves[3]}__|__{player_moves[4]}__|__{player_moves[5]}__
         |    |
-        |    |
+      {player_moves[6]}  |  {player_moves[7]}  |  {player_moves[7]}
     '''
 
     def prompt_game():
@@ -46,12 +46,23 @@ class Game:
         Game.player1_name = input("Player 1, please enter your name: ")
         Game.player2_name = input("Player 2, please enter your name: ")
 
-    def prompt_player_move():
+    def player_move():
 
         if Game.player1_turn == True:
-            print(f"Okay! {Game.player1_name}, it's your turn! From left to right, enter the number of the space you would like to place an 'X' in.")
-            print("Example: to place an 'X' in the middle right space, enter '6'.")
-            print("Example 2: to place an 'X' in the top right space, enter '3'. ")
+            print(f"Okay! {Game.player1_name}, it's your turn!\n")
+            #print("Example: to place an 'X' in the middle right space, enter '6'.")
+            #print("Example 2: to place an 'X' in the top right space, enter '3'. ")
+            Game.player1_move = int(input()) - 1
+            Game.player_moves[Game.player1_move] = "X"
+            Game.player1_turn = False
+        else:
+            print(f"Okay! {Game.player2_name}, it's your turn!\n")
+            Game.player2_move = int(input()) - 1
+            Game.player_moves[Game.player2_move] = "O"
+            Game.player1_move = True
+            
+        
+
 
 
     def print_game_board():
