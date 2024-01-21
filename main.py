@@ -7,3 +7,5 @@ game.prompt_game()
 game.display_instructions()
 
 game.register_player_names()
+
+game.prompt_player_move()

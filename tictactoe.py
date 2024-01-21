@@ -2,24 +2,22 @@
 from os import system
 
 class Game:
-    def __init__(self):
-        self.game_go = False
-        self.player1_name = ''
-        self.player2_name = ''
-        self.player1_turn = True
-        self.player1_move = 0
-        self.player2_move = 0
-        self.player_moves = ['', '', ''
-                             '', '', ''
-                             '', '', '']
-        self.game_board = '''
-            |    |        
-        ____|____|____
-            |    | 
-        ____|____|____
-            |    |
-            |    |
-'''
+
+    game_go = False
+    player1_name = ''
+    player2_name = ''
+    player1_turn = True
+    player1_move = 0
+    player2_move = 0
+    player_moves = ['', '', '', '', '', '', '', '', '']
+    game_board = '''
+        |    |        
+    ____|____|____
+        |    | 
+    ____|____|____
+        |    |
+        |    |
+    '''
 
     def prompt_game():
 
@@ -49,7 +47,7 @@ class Game:
         Game.player2_name = input("Player 2, please enter your name: ")
 
     def prompt_player_move():
-        
+
         if Game.player1_turn == True:
             print(f"Okay! {Game.player1_name}, it's your turn! From left to right, enter the number of the space you would like to place an 'X' in.")
             print("Example: to place an 'X' in the middle right space, enter '6'.")
