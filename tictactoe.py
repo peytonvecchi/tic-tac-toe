@@ -7,9 +7,11 @@ class Game:
         self.player1_name = ''
         self.player2_name = ''
         self.player1_turn = True
-        self.player1_moves = ['', '', ''
-                              '', '', ''
-                              '', '', '']
+        self.player1_move = 0
+        self.player2_move = 0
+        self.player_moves = ['', '', ''
+                             '', '', ''
+                             '', '', '']
         self.game_board = '''
             |    |        
         ____|____|____
@@ -51,6 +53,7 @@ class Game:
         if Game.player1_turn == True:
             print(f"Okay! {Game.player1_name}, it's your turn! From left to right, enter the number of the space you would like to place an 'X' in.")
             print("Example: to place an 'X' in the middle right space, enter '6'.")
+            print("Example 2: to place an 'X' in the top right space, enter '3'. ")
 
 
     def print_game_board():
