@@ -8,4 +8,5 @@ game.display_instructions()
 
 game.register_player_names()
 
-game.prompt_player_move()
+while True:
+    game.player_move()
