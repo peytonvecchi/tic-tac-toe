@@ -6,6 +6,18 @@ class Game:
         self.game_go = False
         self.player1_name = ''
         self.player2_name = ''
+        self.player1_turn = True
+        self.player1_moves = ['', '', ''
+                              '', '', ''
+                              '', '', '']
+        self.game_board = '''
+            |    |        
+        ____|____|____
+            |    | 
+        ____|____|____
+            |    |
+            |    |
+'''
 
     def prompt_game():
 
@@ -30,9 +42,20 @@ class Game:
         print("press any key to continue...")
         input()
 
-    def register_players():
+    def register_player_names():
         Game.player1_name = input("Player 1, please enter your name: ")
         Game.player2_name = input("Player 2, please enter your name: ")
+
+    def prompt_player_move():
+        
+        if Game.player1_turn == True:
+            print(f"Okay! {Game.player1_name}, it's your turn! From left to right, enter the number of the space you would like to place an 'X' in.")
+            print("Example: to place an 'X' in the middle right space, enter '6'.")
+
+
+    def print_game_board():
+        print(Game.game_board)
+
         
 
 

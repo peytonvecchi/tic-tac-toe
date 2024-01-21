@@ -6,4 +6,4 @@ game.prompt_game()
 
 game.display_instructions()
 
-game.register_players()
+game.register_player_names()
