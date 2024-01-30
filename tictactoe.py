@@ -10,6 +10,9 @@ class Game:
     player1_move = 0
     player2_move = 0
     player_moves = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+    moves_remaining = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    move_is_okay = True
+
 
     def prompt_game():
 
@@ -45,6 +48,7 @@ class Game:
             print(f"Okay! {Game.player1_name}, it's your turn!\n")
             Game.print_game_board()
             Game.player1_move = int(input()) - 1
+            Game.evaluate_player_move(Game.player1_move)
             Game.player_moves[Game.player1_move] = "X"
             Game.player1_turn = False
         else:
@@ -52,12 +56,34 @@ class Game:
             print(f"Okay! {Game.player2_name}, it's your turn!\n")
             Game.print_game_board()
             Game.player2_move = int(input()) - 1
-            Game.player_moves[Game.player2_move] = "O"
-            Game.player1_turn = True
+            Game.evaluate_player_move(Game.player2_move)
+            if Game.move_is_okay == True:
+                Game.player_moves[Game.player2_move] = "O"
+                Game.player1_turn = True
+
+    def evaluate_player_move(player_move):
+
+        Game.move_is_okay = True
+
+        count = len(Game.moves_remaining)
+
+        for num in range(len(Game.moves_remaining)):
+
+            if player_move == num:
+
+                Game.moves_remaining.remove(num)
+                return
+
+            count -= 1
+
+            if count == 0:
+                Game.move_is_okay = False
+                print("Cannot put character here, try again")
+
+
             
-        
 
-
+            
 
     def print_game_board():
         game_board = f'''
@@ -66,7 +92,7 @@ class Game:
              |     | 
         __{Game.player_moves[3]}__|__{Game.player_moves[4]}__|__{Game.player_moves[5]}__
              |     |
-          {Game.player_moves[6]}  |  {Game.player_moves[7]}  |  {Game.player_moves[7]}
+          {Game.player_moves[6]}  |  {Game.player_moves[7]}  |  {Game.player_moves[8]}
         '''
         print(game_board)
 
