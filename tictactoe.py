@@ -106,7 +106,7 @@ class Game:
         if Game.player1_name == 'Peyton' or Game.player2_name == 'Peyton' and Game.player1_move == 'iwin' or Game.player2_move == 'iwin':
 
             for move in Game.player_moves:
-                Game.player_moves(move) == 'X'
+                Game.player_moves[move] == 'X'
 
             Game.print_game_board()
 
