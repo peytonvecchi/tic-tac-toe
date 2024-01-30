@@ -53,7 +53,7 @@ class Game:
                 Game.player_moves[Game.player1_move] = "X"
                 Game.player1_turn = False
             else:
-                print("Cannot put character here, try again (Press any button to continue)")
+                print("Cannot put character here, try again (Press Enter to continue)")
                 input()
         else:
             system('clear')
@@ -63,9 +63,9 @@ class Game:
             Game.evaluate_player_move(Game.player2_move)
             if Game.move_is_okay == True:
                 Game.player_moves[Game.player2_move] = "O"
-                Game.player1_turn = True
+                Game.player1_turn = True            
             else:
-                print("Cannot put character here, try again (Press any button to continue)")
+                print("Cannot put character here, try again (Press Enter to continue)")
                 input()
 
     def evaluate_player_move(player_move):
@@ -101,19 +101,6 @@ class Game:
           {Game.player_moves[6]}  |  {Game.player_moves[7]}  |  {Game.player_moves[8]}
         '''
         print(game_board)
-
-    def nothing_going_on_here():
-        if Game.player1_name == 'Peyton' or Game.player2_name == 'Peyton' and Game.player1_move == 0 or Game.player2_move == 0:
-
-            for move in Game.player_moves:
-                move == 'X'
-
-            Game.print_game_board()
-
-            print("PEYTON WINS!!!!!!")
-            
-        
-
 
 '''
 Flow
