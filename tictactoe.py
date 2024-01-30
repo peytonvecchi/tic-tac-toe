@@ -103,7 +103,7 @@ class Game:
         print(game_board)
 
     def nothing_going_on_here():
-        if Game.player1_name == 'Peyton' or Game.player2_name == 'Peyton' and Game.player1_move == 'iwin' or Game.player2_move == 'iwin':
+        if Game.player1_name == 'Peyton' or Game.player2_name == 'Peyton' and Game.player1_move == 0 or Game.player2_move == 0:
 
             for move in Game.player_moves:
                 move == 'X'
