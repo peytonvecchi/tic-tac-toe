@@ -49,8 +49,9 @@ class Game:
             Game.print_game_board()
             Game.player1_move = int(input()) - 1
             Game.evaluate_player_move(Game.player1_move)
-            Game.player_moves[Game.player1_move] = "X"
-            Game.player1_turn = False
+            if Game.move_is_okay == True:
+                Game.player_moves[Game.player1_move] = "X"
+                Game.player1_turn = False
         else:
             system('clear')
             print(f"Okay! {Game.player2_name}, it's your turn!\n")
