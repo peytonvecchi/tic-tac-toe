@@ -10,7 +10,7 @@ class Game:
     player1_move = 0
     player2_move = 0
     player_moves = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-    moves_remaining = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    moves_remaining = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     move_is_okay = True
 
 
@@ -67,11 +67,11 @@ class Game:
 
         count = len(Game.moves_remaining)
 
-        for num in range(len(Game.moves_remaining)):
+        for index in range(len(Game.moves_remaining)):
 
-            if player_move == num:
+            if player_move == Game.moves_remaining[index]:
 
-                Game.moves_remaining.remove(num)
+                Game.moves_remaining.remove(index)
                 return
 
             count -= 1
