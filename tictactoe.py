@@ -71,7 +71,7 @@ class Game:
 
             if player_move == Game.moves_remaining[index]:
 
-                Game.moves_remaining.remove(index)
+                Game.moves_remaining.remove(player_move)
                 return
 
             count -= 1
