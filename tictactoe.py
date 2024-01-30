@@ -52,6 +52,9 @@ class Game:
             if Game.move_is_okay == True:
                 Game.player_moves[Game.player1_move] = "X"
                 Game.player1_turn = False
+            else:
+                print("Cannot put character here, try again (Press any button to continue)")
+                input()
         else:
             system('clear')
             print(f"Okay! {Game.player2_name}, it's your turn!\n")
@@ -61,6 +64,9 @@ class Game:
             if Game.move_is_okay == True:
                 Game.player_moves[Game.player2_move] = "O"
                 Game.player1_turn = True
+            else:
+                print("Cannot put character here, try again (Press any button to continue)")
+                input()
 
     def evaluate_player_move(player_move):
 
@@ -79,7 +85,6 @@ class Game:
 
             if count == 0:
                 Game.move_is_okay = False
-                print("Cannot put character here, try again")
 
 
             
