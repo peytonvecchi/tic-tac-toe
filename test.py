@@ -1,3 +1,4 @@
-list = [1, 2, 3, 4, 5]
+list = ['X', '', 'X', '', '']
 
-print(len(list))
+if list[0] == 'X' and list[2] == 'X':
+    print('winner')

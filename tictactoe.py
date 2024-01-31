@@ -12,7 +12,8 @@ class Game:
     player_moves = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     moves_remaining = [0, 1, 2, 3, 4, 5, 6, 7, 8]
     move_is_okay = True
-
+    player1_win_track = []
+    game_win = False
 
     def prompt_game():
 
@@ -67,6 +68,7 @@ class Game:
             else:
                 print("Cannot put character here, try again (Press Enter to continue)")
                 input()
+        Game.check_winner()
 
     def evaluate_player_move(player_move):
 
@@ -84,12 +86,7 @@ class Game:
             count -= 1
 
             if count == 0:
-                Game.move_is_okay = False
-
-
-            
-
-            
+                Game.move_is_okay = False           
 
     def print_game_board():
         game_board = f'''
@@ -102,21 +99,46 @@ class Game:
         '''
         print(game_board)
 
-'''
-Flow
+    def display_win_message():
+        system('clear')
+        if Game.player1_turn == False:
+            print(f'{Game.player1_name} wins!!')
+        else:
+            print(f'{Game.player2_name} wins!!')
+        Game.print_game_board()
 
-1. ask user if they would like to play, let them know they need
-another person
+    def check_winner():
+        if Game.player_moves[0] == 'X' and Game.player_moves[3] == 'X' and Game.player_moves[6] == 'X':
+            Game.game_win = True
+        elif Game.player_moves[1] == 'X' and Game.player_moves[4] == 'X' and Game.player_moves[7] == 'X':
+            Game.game_win = True
+        elif Game.player_moves[2] == 'X' and Game.player_moves[5] == 'X' and Game.player_moves[8] == 'X':
+            Game.game_win = True
+        elif Game.player_moves[0] == 'X' and Game.player_moves[1] == 'X' and Game.player_moves[2] == 'X':
+            Game.game_win = True
+        elif Game.player_moves[3] == 'X' and Game.player_moves[4] == 'X' and Game.player_moves[5] == 'X':
+            Game.game_win = True
+        elif Game.player_moves[6] == 'X' and Game.player_moves[7] == 'X' and Game.player_moves[8] == 'X':
+            Game.game_win = True
+        elif Game.player_moves[0] == 'X' and Game.player_moves[4] == 'X' and Game.player_moves[8] == 'X':
+            Game.game_win = True
+        elif Game.player_moves[6] == 'X' and Game.player_moves[4] == 'X' and Game.player_moves[2] == 'X':
+            Game.game_win = True
+        elif Game.player_moves[0] == 'O' and Game.player_moves[3] == 'O' and Game.player_moves[6] == 'O':
+            Game.game_win = True
+        elif Game.player_moves[1] == 'O' and Game.player_moves[4] == 'O' and Game.player_moves[7] == 'O':
+            Game.game_win = True
+        elif Game.player_moves[2] == 'O' and Game.player_moves[5] == 'O' and Game.player_moves[8] == 'O':
+            Game.game_win = True
+        elif Game.player_moves[0] == 'O' and Game.player_moves[1] == 'O' and Game.player_moves[2] == 'O':
+            Game.game_win = True
+        elif Game.player_moves[3] == 'O' and Game.player_moves[4] == 'O' and Game.player_moves[5] == 'O':
+            Game.game_win = True
+        elif Game.player_moves[6] == 'O' and Game.player_moves[7] == 'O' and Game.player_moves[8] == 'O':
+           Game.game_win = True
+        elif Game.player_moves[0] == 'O' and Game.player_moves[4] == 'O' and Game.player_moves[8] == 'O':
+            Game.game_win = True
+        elif Game.player_moves[6] == 'O' and Game.player_moves[4] == 'O' and Game.player_moves[2] == 'O':
+            Game.game_win = True
 
-2. prompt player1 to enter name and if they want X or O
-
-3. prompt player2 to enter their name and let them know which symbol they are
-
-4. prompt user if they would like instructions on how to play, then print instructions
-
-5. wait for user to press any key to continue
-
-6. flip a coin to see who goes first
-
-'''
 
